@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>📖 Room Bookings</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    /* --- Extra Styling for Bookings --- */
+    .booking-card {
+      background: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .booking-card strong {
+      color: #333;
+    }
+    .booking-buttons {
+      margin-top: 5px;
+    }
+    .booking-buttons button {
+      margin-right: 5px;
+      padding: 4px 8px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .edit-btn {
+      background: #007bff;
+      color: white;
+    }
+    .delete-btn {
+      background: #dc3545;
+      color: white;
+    }
+    .no-bookings {
+      text-align: center;
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📖 Room Bookings</h2>
+    
+    <!-- Booking Form -->
+    <input type="number" id="room_id" placeholder="Room ID" required />
+    <input type="text" id="booked_by" placeholder="Booked By" required />
+    <input type="datetime-local" id="start_time" required />
+    <input type="datetime-local" id="end_time" required />
+    <button onclick="createBooking()">✅ Create Booking</button>
+
+    <!-- Booking List -->
+    <div id="booking-list" style="margin-top: 20px;"></div>
+
+    <!-- Logout Button -->
+    <button onclick="logout()" style="margin-top: 20px; background: red; color: white; padding: 8px 12px; border-radius: 5px;">Logout</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

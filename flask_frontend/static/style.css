@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: #fff;
+}
+
+body::before, body::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2), transparent);
+  animation: float 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+body::before {
+  top: 10%;
+  left: 10%;
+}
+
+body::after {
+  bottom: 10%;
+  right: 10%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.1); }
+}
+
+.container {
+  background: #e0e5ec;
+  border-radius: 30px;
+  padding: 2.5rem 3rem;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  width: 90%;
+  max-width: 500px;
+  margin: 4rem auto;
+  z-index: 1;
+  animation: fadeIn 1s ease-out;
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+h2, h3 {
+  text-align: center;
+  color: #1e88e5;
+  margin-bottom: 1.5rem;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="datetime-local"] {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 15px;
+  background: #f1f3f6;
+  box-shadow: inset 5px 5px 10px #c1c3c6, inset -5px -5px 10px #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 12px #42a5f5;
+}
+
+/* Stylish Buttons */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: linear-gradient(145deg, #42a5f5, #1e88e5);
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(66, 165, 245, 0.5);
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(30, 136, 229, 0.6);
+}
+
+/* Booking List */
+#booking-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+#booking-list li {
+  background: linear-gradient(to right, #d0e9ff, #e8f5ff);
+  color: #333;
+  margin-bottom: 12px;
+  padding: 14px;
+  border-left: 6px solid #1e88e5;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Error or success message */
+#message {
+  text-align: center;
+  margin-top: 1.2rem;
+  font-weight: bold;
+}

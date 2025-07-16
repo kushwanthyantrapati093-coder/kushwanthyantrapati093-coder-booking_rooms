@@ -1,0 +1,26 @@
+<!-- templates/register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>📝 Register</h2>
+
+    <!-- Registration Form without Email -->
+    <form id="register-form" onsubmit="register(event)">
+      <input type="text" id="register-username" placeholder="New Username" required />
+      <input type="password" id="register-password" placeholder="New Password" required />
+      <button type="submit">Register</button>
+    </form>
+
+    <p style="text-align:center;">Already have an account? <a href="/login">Login</a></p>
+    <div id="message" style="text-align: center; margin-top: 10px;"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

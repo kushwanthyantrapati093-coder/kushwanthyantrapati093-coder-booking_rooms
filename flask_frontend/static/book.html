@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Room Booking</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>🏨 Room Booking</h2>
+
+    <!-- Create Booking -->
+    <input type="number" id="room_id" placeholder="Room ID" required />
+    <input type="text" id="booked_by" placeholder="Booked By" required />
+    <input type="datetime-local" id="start_time" required />
+    <input type="datetime-local" id="end_time" required />
+    <button onclick="createBooking()">Book Room</button>
+
+    <h3>Your Bookings</h3>
+    <ul id="booking-list"></ul>
+
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
