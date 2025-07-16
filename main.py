@@ -147,3 +147,4 @@ def delete_booking(booking_id: int, db: Session = Depends(get_db), current_user:
     db.delete(booking)
     db.commit()
     return
+"my name is kushwanth"
